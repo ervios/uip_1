@@ -1,0 +1,758 @@
+@font-face {
+    font-family: 'titillium-sbold';
+    src: url('fonts/Titillium-Semibold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'washington';
+    src: url('fonts/Washington-Text-Alternates.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "titillium-sbold" !important;
+    font-weight: normal !important;
+    overflow:hidden;
+  }
+
+* {
+  box-sizing: border-box;
+}
+
+.background-image {
+  	background-image: url(../images/bg3.jpg);
+  	background-size: cover;
+  	display: block;
+ 	filter: blur(5px);
+  	-webkit-filter: blur(3px);
+  	height: 1050px;
+  	left: 0;
+  	position: fixed;
+  	right: 0;
+  	z-index: 1;
+    opacity: 1.0;
+}
+
+.border_view {
+	
+}
+
+#clock-frame {
+	position: relative;
+}
+
+#dummy {
+	margin-top: 20px;
+}
+
+#container {
+	margin: 0 auto;
+	width: 1410px;
+	height: 57em;
+	background: rgba(255, 255, 255, 0.15);
+  	left: 0;
+  	position: fixed;
+  	right: 0;
+  	z-index: 2;
+  	overflow:hidden;
+}
+
+
+#header {
+	width: 1202px;
+	height: 4em;
+	margin-bottom: 1em;
+  color: white;
+  font-size: 24px;
+}
+
+#logo {
+  padding: 0;
+  float: left;
+  margin-left: 10px;
+  margin-top:0px;
+  font-size: 34px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+  text-shadow: 2px 2px #000;
+  cursor: pointer;
+}
+
+#welcome-message {
+  float: left;
+  margin-left: 60px;
+  margin-top: 20px;
+  font-size: 45px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+}
+
+#fname {
+  float: left;
+  margin-top: 20px;
+  font-size: 45px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+}
+
+#credit {
+  float: right;
+  margin-top: 25px;
+  margin-right: 20px;
+  font-size: 55px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+}
+
+#credit img {
+  width: 30px;
+  height: 30px;
+}
+
+#language-button {
+  width: 90px;
+  height: 90px;
+  float: right;
+  border: 1px solid black;
+  margin-right: 20px;
+   background: rgba(205, 155, 25, 0.70);
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: -15px 5px 40px #000;
+}
+
+#profile-button {
+  width: 90px;
+  height: 90px;
+  float: right;
+  border: 1px solid black;
+  margin-right: 20px;
+   background: rgba(205, 155, 25, 0.70);
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: -15px 5px 40px #000;
+  margin-right: 40px;
+}
+
+#logout-button {
+  width: 90px;
+  height: 90px;
+  float: right;
+  border: 1px solid black;
+   background: rgba(205, 155, 25, 0.70);
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: -15px 5px 40px #000;
+}
+
+#middle_section {
+	width: 1402px;
+	height: 50em;
+	overflow:hidden;
+}
+
+#left_side_content {
+	float: left;
+	width: 170px;
+	height: 50em;
+}
+
+
+
+#middle_content {
+	float: left;
+	width: 850px;
+	height: 50em;
+	position: relative;
+	overflow: hidden;
+}
+
+#right_side_content {
+	float: left;
+	width: 380px;
+	height: 50em;
+}
+
+/*
+#footer {
+	clear: both;
+	height: 80px;
+	border: 1px solid black;
+}
+*/
+
+#midcontainer {
+	color: white;
+	font-size: 24px;
+	text-align: center;
+	width: 849px;
+	height: 33.2em;
+	margin: 0 auto 0 auto;
+	overflow:hidden;
+
+}
+#midcontainer-stock {
+  color: white;
+  font-size: 24px;
+  width: 849px;
+  height: 27.2em;
+  margin: 0 auto 0 auto;
+   overflow: hidden;
+overflow: scroll;
+    overflow-x: hidden;
+}
+
+.stock-text {
+  font-family: "washington" !important;
+    font-weight: normal !important;
+    font-size: 3.0em;
+    text-shadow: 2px 2px #000;
+    color: #FFF;
+    margin: 0px;
+}
+
+.hidden-scrollbar {
+	overflow:hidden;
+}
+
+.hidden-scrollbar .inner {
+	overflow:auto;
+}
+
+#favorites-headline {
+	font-family: "washington" !important;
+    font-weight: normal !important;
+    font-size: 1.0em;
+    text-shadow: 2px 2px #000;
+    color: #FFF;
+    margin: 0px;
+}
+
+#beverages-headline {
+	font-family: "washington" !important;
+    font-weight: normal !important;
+    font-size: 1.0em;
+    text-shadow: 2px 2px #000;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+}
+
+#favbeers {
+	font-size: 15px;
+	width: 752px;
+	height: 356px;
+	margin: 0 auto 0 auto;
+	display: inline-block;
+	
+}
+
+.favbeers {
+  font-size: 15px;
+  
+  margin: 0 auto 0 auto;
+  display: inline-block;
+}
+.top-to-bottom {
+ 
+    border-width: 3px;
+    border-style: solid;
+    -webkit-border-image: 
+      -webkit-gradient(linear, 0 0, 0 100%, from(white), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image: 
+      -webkit-linear-gradient(white, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image:
+      -moz-linear-gradient(white, rgba(0, 0, 0, 0)) 1 100%;    
+    -o-border-image:
+      -o-linear-gradient(white, rgba(0, 0, 0, 0)) 1 100%;
+    border-image:
+      linear-gradient(to bottom, white, rgba(0, 0, 0, 0)) 1 100%;
+
+   
+}
+
+.bottom-to-top {
+   border-width: 3px;
+    border-style: solid;
+    -webkit-border-image: 
+      -webkit-gradient(linear, 0 100%, 0 0, from(white), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image: 
+      -webkit-linear-gradient(bottom, white, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image:
+      -moz-linear-gradient(bottom, white, rgba(0, 0, 0, 0)) 1 100%;  
+    -o-border-image:
+      -o-linear-gradient(bottom, white, rgba(0, 0, 0, 0)) 1 100%;
+    border-image:
+      linear-gradient(to top, white, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+#beerblock {
+	font-size: 20px;
+	font: bold;
+	width: 0px;
+	margin: 0 auto 0 auto;
+	display: inline-block;
+	height: 0px;
+	overflow:auto;
+}
+
+.elements {
+	font-size: 18px;
+	font-family: "titillium-sbold" !important;
+    font-weight: normal !important;
+	color: white;
+	border: groove 1px #FFFFFF;
+	padding: 1px;
+	margin: 3px;
+	display: inline-block;
+	float: left;
+	width: 142px;
+	height: 270px;
+	position: relative;
+}
+
+.beerimage {
+	display: inline-block;
+	position: absolute;
+	bottom: 8px;
+	left: 43px;
+  /*background: rgba(255, 255, 255, 0.15);*/
+  width: 60px;
+  height: 150px;
+  border-radius: 15px;
+}
+
+.wineimage {
+	display: inline-block;
+	position: absolute;
+	bottom: 8px;
+	left: 20px;
+}
+.button_options label {
+  width: 80%;
+  display:inline-block;
+  padding: 10px 10px 10px 10px;
+  font-family: "washington" !important;
+  font-size:25px;
+  color: #FFF;
+  text-shadow: 2px 2px #000;
+  background: rgba(205, 155, 25, 0.60);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.button_options p {
+  width: 100%;
+  display:inline-block;
+  padding: 10px 10px 10px 10px;
+  font-family: "washington" !important;
+  font-size:30px;
+  color: #FFF;
+  text-shadow: 2px 2px #000;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.button_options input[type="radio"]:checked + label {
+
+  background: rgba(205, 200, 25, 1);
+  color: #000;
+  text-shadow: 3px 3px #fff;
+  box-shadow: 5px 5px 10px inset !important;  
+}
+
+.button_options input[type="radio"] {
+    display:none;
+}
+
+#alcohol_options label {
+  width: 70%;
+  display:inline-block;
+  padding: 10px 10px 10px 10px;
+  font-family: "titillium-sbold" !important;
+  font-size:16px;
+  color: #FFF;
+  text-shadow: 2px 2px #000;
+  background: rgba(205, 155, 25, 0.60);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#alcohol_options input[type="radio"]:checked + label {
+  border-radius: 20px;
+  background: rgba(205, 200, 25, 1);
+  color: #000;
+  text-shadow: 3px 3px #fff;
+  box-shadow: 5px 5px 10px inset !important;
+}
+
+#price_options label {
+  width: 70%;
+  display:inline-block;
+  padding: 10px 10px 10px 10px;
+  font-family: "titillium-sbold" !important;
+  font-size:16px;
+  color: #FFF;
+  text-shadow: 2px 2px #000;
+  background: rgba(205, 155, 25, 0.60);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#price_options input[type="radio"]:checked + label {
+  border-radius: 20px;
+  background: rgba(205, 200, 25, 1);
+  color: #000;
+  text-shadow: 3px 3px #fff;
+  box-shadow: 5px 5px 10px inset !important;
+}
+
+#show-all {
+  width: 100%;
+}
+
+
+
+#hide-show {
+    margin: 6px;
+	  width: 200px;
+    height: 0px;
+    opacity: 0.0;
+    background: rgba(205, 155, 25, 0.90);
+    color: #FFF;
+    border: 1px solid black;
+    text-shadow: 2px 2px #000;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: "washington" !important;
+    font-weight: normal !important;
+    box-shadow: -5px 10px 20px #000;
+}
+
+.break-add-user {
+  margin-top: 10px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+  font-size: 40px;
+   text-shadow: 2px 2px #000;
+}
+
+#settings-user-management {
+    margin-top: 10px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+  font-size: 50px;
+   text-shadow: 2px 2px #000;
+}
+
+#form-add-user input {
+  font-family: "titillium-sbold" !important;
+  font-weight: normal !important;
+  font-size: 40px;
+  margin-bottom: 10px;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+#button-add-user {
+  margin-top: 20px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+  background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, rgb(112,341,102)),
+        color-stop(0.49, rgb(84,324,68))
+    );
+  color: #000;
+  font-size: 40px;
+  border: 1px solid black;
+  text-shadow: 1px 1px #fff;
+  margin-left: 25px;
+  cursor: pointer;
+}
+#button-cancel-add-user {
+  margin-top: 20px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+  background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, rgb(312,81,82)),
+        color-stop(0.49, rgb(284,24,108))
+    );
+  color: #000;
+  font-size: 40px;
+  border: 1px solid black;
+  text-shadow: 1px 1px #fff;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.user-man-icons input {
+  width: 120px;
+  height: 120px;
+  margin: 20px;
+ background: rgba(205, 155, 25, 0.70);
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: -15px 5px 15px #000;
+  
+}
+
+.go-back-user input {
+  width: 140px;
+  height: 140px;
+  margin: 100px;
+  background: rgba(205, 155, 25, 0.70);
+  border-radius: 25px;
+  box-shadow: 10px 10px 5px #000;
+}
+
+#order-list {
+  font-size: 25px;
+  float: left;
+  width: 100%;
+  height: 25em;
+  margin-left: 5px;
+}
+
+#order-list input {
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  float: right;
+  margin-bottom: 10px;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 10px;
+  box-shadow: -5px 5px 15px #000;
+  background: rgba(205, 155, 25, 0.85);
+  margin-top: 5px;
+}
+
+#order-list li {
+  float: left;
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  list-style-type:none;
+  border-bottom: 2px solid black;
+}
+
+
+#totalprice {
+  float: right;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: -15px 5px 15px #000;
+}
+
+#pay-split {
+  float: left;
+  width: 100%;
+  font-size: 40px;
+  border: 2px solid black;
+}
+#done-btn {
+   margin-top: 10px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+  background: #007000;
+  color: #FFF;
+  font-size: 40px;
+  border: 1px solid black;
+  text-shadow: 2px 2px #000;
+  margin-left: 25px;
+  cursor: pointer;
+  border-radius: 25px;
+  box-shadow: -15px 5px 15px #000;
+  width: 150px;
+}
+#done-btn:active {
+color: #000;
+text-shadow: 2px 2px #FFF;
+}
+
+
+
+#payment button {
+  margin-top: 10px;
+  font-family: "titillium-sbold" !important;
+  font-weight: normal !important;
+  background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, rgb(112,341,102)),
+        color-stop(0.49, rgb(84,324,68))
+    );
+  color: #000;
+  font-size: 40px;
+  border: 1px solid black;
+  text-shadow: 1px 1px #fff;
+  margin-left: 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: -15px 5px 15px #000;
+  width: 150px;
+  opacity: 0.0;
+}
+
+
+#split-btn {
+  margin-top: 10px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+  background: rgba(205, 155, 25, 0.90);
+  color: #fff;
+  font-size: 40px;
+  border: 1px solid black;
+  text-shadow: 2px 2px #000;
+  margin-left: 25px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: -15px 5px 15px #000;
+  width: 150px;
+}
+
+#split-btn:active {
+  color: #000;
+  text-shadow: 3px 3px #fff;
+  box-shadow: 5px 5px 10px inset !important;
+}
+
+
+.imgbutton-style:active{
+  box-shadow: 2px 2px 15px #FFF !important;
+  transform: translateY(1px) !important;
+}
+
+.imgbutton-style:focus{
+  outline:0 !important;
+}
+
+.button-style button:active {
+  box-shadow: 2px 2px 15px #FFF !important;
+  transform: translateY(1px) !important;
+}
+
+.button-style button:focus { 
+  outline:0 !important;
+}
+
+
+
+
+
+
+
+
+#undo-button {
+  width: 65px;
+  height: 65px;
+  float: left;
+  border: 1px solid black;
+  margin-right: 20px;
+   background: rgba(205, 155, 25, 0.70);
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: 1px 5px 15px #000;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+#redo-button {
+  width: 65px;
+  height: 65px;
+  float: left;
+  border: 1px solid black;
+  margin-right: 20px;
+   background: rgba(205, 155, 25, 0.70);
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: 1px 5px 15px #000;
+  margin-right: 0px;
+}
+
+#search-field {
+  height: 50px;
+  font-size: 25px;
+  width: 176px;
+  opacity: 0.3;
+  border-radius: 5px;
+  margin-bottom: 1px;
+}
+
+#search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 176px;
+    height: 60px;
+}
+
+
+
+
+#search-btn {
+  margin-left: 1px;
+  width: 174px;
+  height: 30px;
+  opacity: 0.3;
+  background: rgba(205, 155, 25, 0.90);
+  color: #FFF;
+  border: 1px solid black;
+  text-shadow: 2px 2px #000;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+  box-shadow: -5px 10px 20px #000;
+}
+
+#search_options {
+  width: 174px;
+}
+
+#out-of-stock-block {
+  margin-top: 10px;
+  font-family: "washington" !important;
+  font-weight: normal !important;
+  font-size: 50px;
+  text-shadow: 2px 2px #000;
+}
+
+.stock-list {
+   margin-top: 10px;
+  font-family: "titillium-sbold" !important;
+  font-weight: normal !important;
+  font-size: 20px;
+  text-shadow: 2px 2px #000;
+}
+ 
+ #change-theme {
+  width: 90px;
+  height: 90px;
+  float: right;
+  border: 1px solid black;
+  margin-right: 20px;
+   background: rgba(205, 155, 25, 0.70);
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: -15px 5px 40px #000;
+}
+#mySelect {
+  font-size: 30px;
+   background: rgba(205, 155, 25, 0.70);
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8" />
+    <title>The Flying Dutchman</title>
+    <link rel="shortcut icon" href="images/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/mainview.css" />
+    <script src="js/jQuery/jquery-1.11.2.min.js"></script>
+    <script src="js/database_functions.js"></script>
+    <script src="js/i18next/i18next-1.7.7.min.js"></script>
+    <script src="js/internationalization.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/generate_beverage.js"></script>
+    <script src="js/logout_timer.js"></script>
+    <script src="js/user_management.js"></script>
+    <script src="js/stock_management.js"></script>
+    <!--<script type= "text/javascript" src="js/filter_beverage.js"></script>-->
+    
+</head>
+
+<body onload="createBody();">
+	<div class="background-image"></div>
+
+	<div class="top-to-bottom" id="container">
+
+		<div id="header">
+			<div id="logo">The Flying<br>Dutchman</div>
+            <div id="welcome-message" class="message" data-i18n="message.welcome"></div><div id="fname">,</div>
+          	<input type="image" id="logout-button" src="images/logout_button.svg" onclick="logout();">
+			<input type="image" id="language-button" src="images/lang_flags.png">
+			<input type="image" class="imgbutton-style" id="change-theme" src="images/bg2.jpg">
+			<input type="image" id="profile-button" src="images/profile1.png" onclick="userManagement();">
+			<div id="credit"><img src="images/credit1.png"></div>
+		</div>
+
+		<div class="border_view" id="middle_section">
+			<div class="border_view" id="left_side_content">
+				
+			</div>
+
+			<div class="border_view" id="middle_content">
+				<div  class="stock-text settings" data-i18n="settings.stock_management"></div><br>
+				<div id="midcontainer-stock" class="bottom-to-top"> 
+					
+					<ul id="out-of-stock-block"></ul>
+				</div>
+
+				
+			<div class="border_view" id="right_side_content">
+				
+			</div>
+		</div><input type="image" id="order-button" src="images/order-1.png" onclick="getStockList();">
+		<script src="js/stock_management.js"></script>
+
+
+		<!--<div id="footer">footer</div>-->
+
+	</div>
+</body>
+</html>

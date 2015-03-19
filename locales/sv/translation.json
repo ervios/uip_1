@@ -1,0 +1,47 @@
+{
+  "lang": {
+    "type": "Svenska"
+  },
+  "message": {
+  	"welcome": "Välkommen",
+  	"favorites": "Dina Favoriter",
+  	"beverages": "Drycker"
+  },
+  "settings": {
+  	"user_management": "Användarhantering",
+  	"add_user": "Lägg till ny användare",
+    "edit_user": "Ändra användare",
+  	"names": "Namn",
+  	"contact": "Kontaktinformation",
+  	"login_credentials": "Inloggningsuppgifter",
+    "stock_management": "Antal sorter som är fåtaliga i lager: "
+  },
+  "login": {
+    "login_username":"Användarnamn:",
+    "login_password":"Lösenord:",
+    "login_message": "Logga in",
+    "error_message_no_input": "Vänligen fyll i alla fält",
+    "error_message_no_user": "Okänd användare :-[",
+    "error_message_no_match": "Ogiltig information:-["
+  },
+    "form_user": {
+    "first_name": "Förnamn",
+    "last_name": "Efternamn",
+    "email": "Email",
+    "phone": "Telefon",
+    "user_name": "Användarnamn",
+    "password": "Lösenord"
+  },
+  "buttons": {
+    "cancel": "Avbryt",
+    "save_user": "Spara",
+    "split": "Splitta",
+    "pay": "Betala",
+    "clear": "Rensa"
+  },
+  "search_txt": {
+    "search_btn": "Sök"
+  }
+
+}
+

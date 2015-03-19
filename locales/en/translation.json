@@ -1,0 +1,46 @@
+{
+  "lang": {
+    "type": "English"
+  },
+  "message": {
+  	"welcome": "Welcome",
+  	"favorites": "Your Favourites",
+  	"beverages": "Beverages"
+  },
+  "settings": {
+  	"user_management": "User Management",
+  	"add_user": "Add New User",
+    "edit_user": "Edit User",
+  	"names": "Names",
+  	"contact": "Contact Info",
+  	"login_credentials": "Login Credentials",
+    "stock_management": "Low stock: "
+  },
+  "login": {
+    "login_username":"Username:",
+    "login_password":"Password:",
+    "login_message": "Log in",
+    "error_message_no_input": "Please enter all fields",
+    "error_message_no_user": "No such user found :-[",
+    "error_message_no_match": "Couldn't match input :-["
+  }, 
+  "form_user": {
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "user_name": "User Name",
+    "password": "Password"
+  },
+  "buttons": {
+    "cancel": "Cancel",
+    "save_user": "Save",
+    "split": "Split",
+    "pay": "Pay",
+    "clear": "Clear"
+  },
+  "search_txt": {
+    "search_btn": "Search"
+  }
+
+}

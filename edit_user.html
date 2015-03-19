@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8" />
+    <title>The Flying Dutchman</title>
+    <link rel="shortcut icon" href="images/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/mainview.css" />
+    <script src="js/jQuery/jquery-1.11.2.min.js"></script>
+    <script src="js/database_functions.js"></script>
+    <script src="js/i18next/i18next-1.7.7.min.js"></script>
+    <script src="js/internationalization.js"></script>
+    <script src="js/header.js"></script>
+     <script src="js/transitions.js"></script>
+    <script src="js/logout_timer.js"></script>
+    <script src="js/user_management.js"></script>
+    <!--<script type= "text/javascript" src="js/filter_beverage.js"></script>-->
+    
+</head>
+
+<body>
+	<div class="background-image"></div>
+
+	<div class="top-to-bottom" id="container">
+
+		<div id="header">
+			<div id="logo" onclick="window.location.href = 'mainview.html';">The Flying<br>Dutchman</div>
+            <div id="welcome-message" class="message" data-i18n="message.welcome"></div><div id="fname">,</div>
+            
+			<input type="image" id="logout-button" src="images/logout_button.svg" onclick="logout();">
+			<input type="image" id="language-button" src="images/lang_flags.png">
+			<input type="image" class="imgbutton-style" id="change-theme" src="images/bg2.jpg">
+			<input type="image" id="profile-button" src="images/profile1.png" onclick="userManagement();">
+			
+
+			<div id="credit"><img src="images/credit1.png"></div>
+		</div>
+
+		<div class="border_view" id="middle_section">
+			<div class="border_view" id="left_side_content">
+				
+			</div>
+
+			<div class="border_view" id="middle_content">
+
+				<div id="midcontainer" class="bottom-to-top"> 
+					<div id="settings-user-management" class="settings" data-i18n="settings.edit_user"></div>
+					
+					<div id="users-dropdown">
+						<select id="mySelect">
+						</select></div>
+					
+
+					<form id="form-add-user">
+						<center>
+							<div class="break-add-user settings" data-i18n="settings.names"></div>
+							<input id="firstname" class="form_user" data-i18n="[placeholder]form_user.first_name" type="text" name="fname"> <br>
+							<input id="lastname" class="form_user" data-i18n="[placeholder]form_user.last_name"type="text" name="lname"> <br> 
+							<div class="break-add-user settings" data-i18n="settings.contact"></div>
+							<input id="email" class="form_user" data-i18n="[placeholder]form_user.email" text="type" name="email"> <br>
+							<input id="phone" class="form_user" data-i18n="[placeholder]form_user.phone" type="text" name="phone"> <br>
+							<div class="break-add-user settings" data-i18n="settings.login_credentials"></div>
+							<input id="username" class="form_user" data-i18n="[placeholder]form_user.user_name" type="text" name="uname"> <br> 
+							<input id="password" class="form_user" data-i18n="[placeholder]form_user.password" type="password" name="pass"> <br>
+						</center>
+					</form>
+					<input type="button" id="button-cancel-add-user" class="buttons" data-i18n="[value]buttons.cancel" onclick="window.location.href = 'user_management.html';">
+					<input type="button" id="button-add-user" class="buttons" data-i18n="[value]buttons.save_user" onclick="addNewUser();" >
+		        </div>
+			</div>
+			<div class="border_view" id="right_side_content">
+				
+			</div>
+		</div>
+
+
+		<!--<div id="footer">footer</div>-->
+		<script>
+			$(window).load(function() {
+      				welcomeMessage(); 
+      				getUserCredit();
+      				createDropDown(); 
+      				//setLogoutTimer();
+      				
+		});
+		</script>
+	</div>
+</body>
+</html>

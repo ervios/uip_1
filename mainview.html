@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <title>The Flying Dutchman</title>
+    <link rel="shortcut icon" href="images/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/mainview.css" />
+    <script src="js/jQuery/jquery-1.11.2.min.js"></script>
+    <script src="js/i18next/i18next-1.7.7.min.js"></script>
+    <script src="js/database_functions.js"></script>
+    <script src="js/internationalization.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/user_management.js"></script>
+    <script src="js/generate_beverage.js"></script>
+    <script src="js/filter_beverage.js"></script>
+    <script src="js/logout_timer.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/loadpages.js"></script>
+</head>
+<body onload="loadMainView(); ">
+<script type="text/javascript">
+
+</script>
+
+	<div class="background-image"></div>
+
+	<div class="top-to-bottom" id="container">
+
+		<div id="header">
+			<div id="logo">The Flying<br>Dutchman</div>
+            <div id="welcome-message" class="message" data-i18n="message.welcome"></div><div id="fname">,</div>
+			<input type="image" class="imgbutton-style" id="logout-button" src="images/logout_button.svg" onclick="logout();">
+			<input type="image" class="imgbutton-style" id="language-button" src="images/lang_flags.png">
+			<input type="image" class="imgbutton-style" id="change-theme" src="images/bg2.jpg">
+			
+			<input type="image" class="imgbutton-style" id="profile-button" src="images/profile1.png" onclick="userManagement();">
+			
+			<div id="credit"><img src="images/credit1.png"></div>
+		</div>
+		<div class="border_view" id="middle_section">
+
+		<!-- LEFT SIDE LEFT SIDE LEFT SIDE -->
+		<div class="border_view" id="left_side_content">
+
+			
+
+    		<input name="searchTxt" id="search-field" type="text" maxlength="512" id="searchTxt" class="searchField"value="Search...">
+    			<button class="search_txt" id="search-btn" type="submit" data-i18n="search_txt.search_btn" ></button>
+
+
+    			
+						<div class="button_options">
+						<br><br><br>
+
+						<div id="search_options">
+							<input id="search_default" type="radio" name="alcohol" onclick="stringSearch()" value="default" checked="true">
+							<label id="show-all" for="search_default">Show All</label>
+							<br>
+							<p>Filter:</p>
+
+							<input id="search_alcohol" type="radio" name="alcohol" onclick="stringSearch()" value="alcohol">
+							<label id="alcohol" for="search_alcohol">Alcohol</label>
+
+								<div id="alcohol_options" style="display:none;">
+
+									<input id="zeroPointZero" type="radio" name="alcohol_spec" onclick="stringSearch()" value="0030">
+									<label id="firstFirst" for="zeroPointZero">0% - 3.0%</label>
+
+									<input id="threePointOne" type="radio" name="alcohol_spec" onclick="stringSearch()" value="1165">
+									<label id="firstSecond" for="threePointOne">3.1% - 6.5%</label>
+							
+									<input id="sixPointFive" type="radio" name="alcohol_spec" onclick="stringSearch()" value="6565">
+									<label id="firstThird" for="sixPointFive">6.5%+</label>
+								</div>
+
+							<input id="search_price" type="radio" name="alcohol" onclick="stringSearch()" value="price">
+							<label id="price" for="search_price">Price</label>
+
+								<div id="price_options" style="display:none;">
+									<input id="lessThan16" type="radio" name="price_spec" onclick="stringSearch()" value="price_0to15">
+									<label id="secondFirst" for="lessThan16">Price < 16</label>
+
+									<input id="16to30" type="radio" name="price_spec" onclick="stringSearch()" value="price_16to30">
+									<label id="secondSecond" for="16to30">Price: 16 - 29.99</label>
+
+									<input id="moreThan30" type="radio" name="price_spec" onclick="stringSearch()" value="price_moreThan30">
+									<label id="secondThird" for="moreThan30">Price >= 30</label>
+								</div>
+						</div>
+					</div>
+		</div>
+<!-- LEFT SIDE LEFT SIDE LEFT SIDE -->
+			<div class="border_view" id="middle_content">
+
+				<div id="midcontainer" class="bottom-to-top"> 
+
+					<div id="left"> </div>
+
+        <div id="middle"></div>
+					<div id="favorites-headline" >
+					<!-- <div id="favorites-message" class="message" data-i18n="message.favorites"></div>-->
+						</div>
+						<div id="hide-show-btn" ><button id="hide-show"class="imgbutton-style message" data-i18n="message.favorites" value="Show"></button></div>
+		            <div id="favbeers" class="top-to-bottom favbeers" ondrop="drop(event)" ondragover="allowDrop(event)">
+		            	
+		        	</div>
+		            <div id="beverages-headline" class="message" data-i18n="message.beverages"></div>
+		            <div id ="beerblock" class="inner"></div>
+		        </div>
+			</div>
+			<div class="border_view" id="right_side_content">
+				
+				 <div id="order-list" ondrop="dropB(event)" ondragover="allowDrop(event)">
+				 	
+				 </div>
+				 <div id="totalprice"></div>
+				 <div id="clear-all"><input type="image" id="undo-button" src="images/undo.png" onclick="undo();">
+				 <input type="image" id="redo-button" src="images/redo.png" onclick="redo();"></div>
+				 <div id="pay-split">
+				 	
+				 		<button id="done-btn" class="imgbutton-style buttons" data-i18n="buttons.pay"></button>
+					 	<button id="split-btn" class="imgbutton-style buttons" data-i18n="buttons.split" value="no-split"></button>
+					 
+				</div>
+			</div>
+		</div>
+
+
+		<!--<div id="footer">footer</div>-->
+
+	</div>
+</body>
+</html>

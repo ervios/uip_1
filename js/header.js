@@ -1,9 +1,10 @@
+/* File has functions for the header, such as displaying the correct user's First name when logged in,
+and their credit as well as deleting the sessionStorage data for the username and password when you logout.*/
+
+
 function welcomeMessage() {
 
 	var wmessage = "";
-	//$("#fname").html(", " + sessionStorage.getItem("username"));
-	//$("html, body").animate({ scrollTop: "300px" });
-
 	var db_url = getDBData('iou_get');
 	
 	$.getJSON(db_url, function(data){
@@ -19,7 +20,6 @@ function welcomeMessage() {
 }
 
 function getUserCredit() {
-
 	
 	var db_url = getDBData('iou_get');
 	
@@ -32,6 +32,8 @@ function getUserCredit() {
 	
 }
 
+//Moved to logout_timer.js
+/*
 function logout() {
 	sessionStorage.setItem("username", "");
 	sessionStorage.setItem("password", "");
@@ -39,5 +41,6 @@ function logout() {
     localStorage.setItem("password", "");
 	window.location.href = "login.html";
 }
+*/
 
 

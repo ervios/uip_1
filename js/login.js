@@ -2,6 +2,11 @@ var errorNoInput;
 var errorNoUser;
 var errorNoMatch;
 
+/* This functions is called on the  "Log in"/"Logga in" button is clicked, 
+   it will check that the user added something into the form so it may be send
+   to the db to fetch accurate data.
+   An ajax call is being used instead of normal xmlHttpReq or getJSON so we may use the "success:" part to see if it is a
+   correct user.*/
 function validateLogin() {
 
    var errors = "";
@@ -17,18 +22,15 @@ function validateLogin() {
    } 
    else if (username == password)  {
 
-      //username = "jorass";
-      //password = "jorass";
-
       sessionStorage.setItem("username", username);
       sessionStorage.setItem("password", password);
       localStorage.setItem("username", username);
       localStorage.setItem("password", password);
 
+      /* Create the DB Link for iou_get */
       var db_link = getDBData('iou_get');
-
      
-$("#submit").fadeOut("fast");
+      $("#submit").fadeOut("fast");
       
       $.ajax(db_link, 
          {
@@ -40,12 +42,9 @@ $("#submit").fadeOut("fast");
                   $("#error-messages").html(errors);
                   $("#submit").fadeIn("fast");
                } else if (data.type[0] == 'i') {
-                  
-                   var backg = $("body");
+                  var backg = $("body");
                   backg.animate({opacity: '0.1'}, "slow");
-                  //$("#submit").fadeOut("fast");
                   $("#loginDiv").fadeOut("slow");
-
                   setTimeout(function(){portMainView()},500);
                }
          }
@@ -58,8 +57,16 @@ $("#submit").fadeOut("fast");
    }
 }
 
+/* .ready() Wraps in code so it won't be able to run until the whole page is loaded,
+   this is useful for buttons that you don't want to function until the whole page is loaded
+   and you might not have all the elements you need.*/
+
 $(document).ready(function() {
 
+   /* SET THE INITIAL/STANDARD LANGUAGE AND "THEME" OF THE SITE,
+    --> so if the user doesn't change to English at login page it will be Swedish,
+    may be changed later of course once logged in.
+   */
    var lang = 'sv';
    var theme = 'theme1';
    $("#change-theme").val(theme);
@@ -102,25 +109,17 @@ $(document).ready(function() {
 
    $("#change-theme").click(function(){ 
       if ($("#change-theme").val() == "theme1") {
-
          $("body").css({"background-image": "url(images/bg2.jpg)"});
          $("#change-theme").attr("src","images/bg3.jpg");
          sessionStorage.setItem("theme", "theme2");
          $("#change-theme").val("theme2");
       }
-
       else if ($("#change-theme").val() == 'theme2') {
-
          $("body").css({"background-image": "url(images/bg3.jpg)"});
          $("#change-theme").attr("src","images/bg2.jpg");
          sessionStorage.setItem("theme", "theme1");
          $("#change-theme").val("theme1");
       }
    });
-
-   $( "#foo" ).one( "click", function() {
-  alert( "This will be displayed only once." );
-});
-
 });
 

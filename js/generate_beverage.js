@@ -1,9 +1,16 @@
-//--------------------------------- System Definition
+/* This file contains functions for the favourite beers, beerview and order list.
+    Whenever there's a function called like, ex. "var x = getDBData('iou_get')" that's a
+    function inside database_functions.js, which is a switch for providing an URL for the DB API.
+
+    All functions here are used in the mainview.html ONLY.
+*/
 
 var beerDb = [];
 
 var tmpNames = [];
 var tmpPrice  = [];
+
+/* Gets all the IDs, Beernames and Prices from the database, used in several functions. */
 var beerID = getAllDrinkIds();
 var namesA = getAllBeerNamesA();
 var namesB = getAllBeerNamesB();
@@ -17,6 +24,8 @@ var username;
 var favcount = 1;
 var orderedItems = [];
 
+var totalPrice;
+
 function addDataFromDB() {
 
     for (var i = beerID.length - 1 - dbTrash; i >= 0; i--) {
@@ -29,7 +38,7 @@ function addDataFromDB() {
     }
 }
 
-//--------------------------------- System Function
+
 
 function initiateBeerAdding()
 {
@@ -37,6 +46,11 @@ function initiateBeerAdding()
     beerDb.reverse();
     var tmp = document.getElementById("middle");       
 }
+
+/*----------------------------------------------------------------------- */
+/*-----------------------AREA FOR ORDER LIST----------------------------- */
+/*----------------------------------------------------------------------- */
+
 
 function minus_(input) {
     // Get element of the order-list side and display a beer_id, in this region. 
@@ -163,8 +177,9 @@ function addToList(beer_id, beername, beerprice) {
                                 + orderedItems[i].beer_id
                                 + ")'/>" 
                                 + orderedItems[i].beername
+                                + "á "
                                 + orderedItems[i].amount
-                                + noString
+                                
                                 + "<input type='button' value='+' onclick='addToList("
                                 + orderedItems[i].beer_id 
                                 + ")'/><input type='button' value='-' onclick='minus_("
@@ -192,6 +207,39 @@ function GetIndexOrderedContain(input) {
 
 }
 
+function setTotal(tmpTotal) {
+    totalPrice = tmpTotal;
+}
+
+function getTotal() {
+    return totalPrice;
+}
+
+/* Updates the total cost in the order*/
+function total(){
+
+    var totalCost = 0;
+        for(var i = 0; i < orderedItems.length; i++) {
+            totalCost += orderedItems[i].beerprice * orderedItems[i].amount;
+        }
+
+    setTotal(totalCost.toFixed(2));
+    var showprice = document.getElementById("totalprice");
+    showprice.innerHTML = totalCost.toFixed(2) + ' kr';
+}
+
+var orderList = [];
+
+function setOrder(tmpOrder) {
+    orderList = tmpOrder;
+}
+
+function getOrder() {
+    return orderList;
+}
+
+
+/* UNDO/REDO for the order list */
 var lastUpdate = new Array(10);
 var stacky = new Array(10);
 var count3 = 0;
@@ -223,13 +271,16 @@ function redo(){
         }
     }
 }
+/*----------------------------------------------------------------------- */
+/*-------------------ENDS AREA FOR ORDER LIST---------------------------- */
+/*----------------------------------------------------------------------- */
+/* ________________________________________________________________________*/
 
-/*-----END OF ADDING TO ORDER------*/
-/*-----END OF ADDING TO ORDER------*/
-/*-----END OF ADDING TO ORDER------*/
-/*-----END OF ADDING TO ORDER------*/
-/*-----END OF ADDING TO ORDER------*/
-/*-----END OF ADDING TO ORDER------*/
+
+
+/*----------------------------------------------------------------------- */
+/*--------------------AREA FOR FAVOURITES AND BEERVIEW------------------- */
+/*----------------------------------------------------------------------- */
 
 function httpGet(theUrl) {
     
@@ -398,6 +449,18 @@ function init2()
     init();
 }
 
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!NOTE!!!*/
+/* The commented "localStorage["users"] = JSON...." will have to be
+    uncommented 1 time and refresh the page and the commented again.
+    This is for the beers in the favourite area to be saved into the localStorage.
+    If this is not done you will have an error in the console saying:
+    Unexpected token u / o / e.
+    This is because the localStorage hasn't been initialized on your computer so
+    it doesn't recognize it.
+*/
+
 function init()
 {
     if(sessionStorage.getItem("dummycount") == "one")
@@ -412,6 +475,9 @@ function init()
         sessionStorage.setItem("dummycount", "two");
     }
 }
+
+
+/* Drop function for dropping beers into the favourite beer area */
 
 function drop(event) {
 	if(favcount < 6)
@@ -455,6 +521,7 @@ function drop(event) {
 	}
 }
 
+/* Drop function for dropping beer into the order list */
 function dropB(event)
 {
     
@@ -528,44 +595,20 @@ function loadFavs()
     nodeCopy.addEventListener('dragstart', function() {drag(event)}, false);
 	localStorage["users"] = JSON.stringify(storedUsers);
 }
+/*----------------------------------------------------------------------- */
+/*--------------------AREA FOR FAVOURITES AND BEERVIEW------------------- */
+/*----------------------------------------------------------------------- */
 
-var totalPrice;
 
-function setTotal(tmpTotal) {
-    totalPrice = tmpTotal;
-}
 
-function getTotal() {
-    return totalPrice;
-}
-
-/* ADDING STUFF TO ORDER */
-function total(){
-
-    var totalCost = 0;
-        for(var i = 0; i < orderedItems.length; i++) {
-            totalCost += orderedItems[i].beerprice * orderedItems[i].amount;
-        }
-
-    setTotal(totalCost.toFixed(2));
-    var showprice = document.getElementById("totalprice");
-    showprice.innerHTML = totalCost.toFixed(2) + ' kr';
-}
-
-var orderList = [];
-
-function setOrder(tmpOrder) {
-    orderList = tmpOrder;
-}
-
-function getOrder() {
-    return orderList;
-}
-
+/* Hides the favourite beers when page is first loaded, then it all button listeners
+    for the buttons: "Your Favourites", "Pay" and "Split".
+*/
 
 $(document).ready(function(){
     $("#favbeers").hide();
 
+    /* Hides/shows the favourite beers -->mainview.html */
     $("#hide-show").click(function(){
     	if ($("#hide-show").val() == "Hide") {
     		$("#favbeers").hide(2000);
@@ -576,6 +619,7 @@ $(document).ready(function(){
     	}
     });
 
+    /* NOT USED currently, button supposed to clear the whole order. -->mainview.html*/
     $("#clear-all-btn").click(function() {
         clear_();
     });
@@ -592,6 +636,7 @@ $(document).ready(function(){
         alert(getOrder().join('\n') + "\n\nTotal of: " + getTotal());
     });
 
+    /* Splits the order -->mainview.html */ 
     $("#split-btn").click(function() {
 
         if ($("#split-btn").val() == "no-split") {

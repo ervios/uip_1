@@ -1,20 +1,9 @@
 
-function userManagement() {
-	 window.location.href = 'user_management.html';
-}
-
-function editUserButton() {
-	window.location.href = "edit_user.html";
-}
-
-function addUserButton() {
-	window.location.href = "add_user.html";
-}
-
-function goBackButton() {
-	window.location.href ="mainview.html";
-}
-
+/* Functions used in add_user. - edit_user. and user_management.html 
+  --> Currently the send in info to addNewUser() which is used in add_user.html/edit_user.html
+  will just have undefined data, due to the last changes of the internationalization for placeholders
+  so it's currently not working.
+*/
 
 var users =[];
 
@@ -24,17 +13,17 @@ function addNewUser(fname, lname, uname, pass, email, phone) {
  	var db_link = getDBData('user_edit');
  	
  	db_link += "&new_username="
- 			+ uname
- 			+ "&new_password="
- 			+ pass
- 			+ "&first_name="
- 			+ fname
- 			+ "&last_name="
- 			+ lname
- 			+ "&email="
- 			+ email
- 			+ "&phone="
- 			+ phone;
+     			+ uname
+     			+ "&new_password="
+     			+ pass
+     			+ "&first_name="
+     			+ fname
+     			+ "&last_name="
+     			+ lname
+     			+ "&email="
+     			+ email
+     			+ "&phone="
+     			+ phone;
 
  	alert(db_link);
 
@@ -98,9 +87,6 @@ function validateInput() {
 	}
 	
 }
-
-
-
 
 function getAllUsers() {
 
@@ -186,29 +172,22 @@ function createDropDown() {
   var select2 = '</select>';
 
   users = getAllUserInfo();
-  //alert(users[0].username); 
-var options = "";
+  var options = "";
 
     for (var i = 0; i < users.length; i++) {
         options += '<option value="'
                 + i + '">'
                 +users[i].username +'</option>';
     }
-
-   //alert(options);
-
-
   $("#mySelect").html(options);
-
 }
-
 
 
 $(document).ready(function() {
 
   $('#mySelect').on('change', function() {
+
     var value = $(this).val();
-      
       $("#firstname").val(users[value].first_name);
       $("#lastname").val(users[value].last_name);
       //$("#email").val(users[value].email);
@@ -218,52 +197,3 @@ $(document).ready(function() {
 
   });
 });
-
-
-
-
-/* 
-function getAllUserInfo() 
-{
-    var completeArray= [];
-    var users = [];
-    var userNames = [];
-    var userLastNames = [];
-    var userAssets = [];
-    var db_link = getDBData('iou_get_all');
-    var allInfo = httpGet(db_link);
-    obj = JSON.parse(allInfo);
-    for(i = 0; i < obj.payload.length; i++) 
-    {
-        if(obj.payload[i].username) 
-        {
-            users.unshift(obj.payload[i].username);
-        }
-        if(obj.payload[i].first_name) 
-        {
-            userNames.unshift(obj.payload[i].first_name);
-        }
-        if(obj.payload[i].last_name) 
-        {
-            userLastNames.unshift(obj.payload[i].last_name);
-        }
-        if(obj.payload[i].assets) 
-        {
-            userAssets.unshift(obj.payload[i].assets);
-        }
-    }
-    
-    for (var i = users.length - 1; i >= 0; i--) {
-        completeArray[i] = {   
-                    "username": users[i],
-                    "password": users[i],
-                    "first_name":  userNames[i], 
-                    "last_name": userLastNames[i],
-                    "assets": userAssets[i]
-                    };
-            
-    }
-    console.log(completeArray);
-    return completeArray;
-}
-*/

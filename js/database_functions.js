@@ -1,3 +1,6 @@
+/*This file creates the DB's API http links in a nice way so it's more dynamic, it also stores the 
+current logged in user in a session so it may be used properly in the db calls.*/
+
 
 function getDBData(tmp_function) {
 

@@ -1,45 +1,74 @@
-function loadMainView() {
-	init2(); 
-	var div = $("#hide-show");
-	    div.animate({height: '10px', opacity: '0.2'}, "slow");
-	    div.animate({height: '20px', opacity: '0.4'}, "slow");
-	    div.animate({height: '40px', opacity: '0.6'}, "slow");
-	    div.animate({height: '60px', opacity: '1.0'}, "slow");
-	
-	var beerv = $("#beerblock");
-	    beerv.animate({height: '100px', opacity: '0.4'}, "slow");
-	   	beerv.animate({width: '50px', opacity: '0.4'}, "slow");
-	   	beerv.animate({height: '270px', opacity: '0.5'}, "slow");
-	   	beerv.animate({width: '141px', opacity: '0.6'}, "slow");
-	    beerv.animate({width: '772px', opacity: '0.7'}, "slow");
-	    beerv.animate({height: '630px', opacity: '1.0'}, "slow");
-
-	var backg = $(".background-image");
-	    //backg.animate({filter: 'blur(5px)'}, "slow");
-	    //backg.animate({-webkit-filter: 'blur(3px)'}, "slow");
-/*
-	var imgBtn = $(".imgbutton-style");
-	    imgBtn.animate({height: '100px', opacity: '0.4'}, "slow");
-
-	var btnStyle = $(".button-style");
-	    btnStyle.animate({height: '100px', opacity: '0.4'}, "slow");
+/* Functions for changing to a different html or selecting which functions should be run 
+when the page is loaded
 */
+
+function loadMainView() {
+	/*generate_beverage.js*/
+	init2(); 
 	welcomeMessage(); 
 	initiateBeerAdding(); 
 	createBeerView(); 
-	getUserCredit(); 
+	getUserCredit();
 	loadFavs();
+
+	/*transitions.js*/
+	favouriteAnimation();
+	beerviewAnimation();
+
+	/*logout_timer.js*/
 	//setLogoutTimer();
 }
 
 function loadUserManagement() {
-	
+	/*header.js*/
+	welcomeMessage(); 
+	getUserCredit(); 
+
+	/*logout_timer.js*/
+	//setLogoutTimer();
 }
 
-function setLoaded() {
-	sessionStorage.setItem("loaded", "1");
+function loadEditUser() {
+	/*user_management.js*/
+	createDropDown();
+
+	/*header.js*/
+	welcomeMessage(); 
+	getUserCredit();
+
+	/*logout_timer.js*/
+	//setLogoutTimer();
+}
+
+function loadAddUser() {
+	/*header.js*/
+	welcomeMessage(); 
+	getUserCredit(); 
+
+	/*logout_timer.js*/
+	//setLogoutTimer();
 }
 
 function portMainView() {
    window.location.href = "mainview.html";
+}
+
+function portUserManagement() {
+	window.location.href = 'user_management.html';
+}
+
+function portEditUser() {
+	window.location.href = "edit_user.html";
+}
+
+function portAddUser() {
+	window.location.href = "add_user.html";
+}
+
+function stockManagementButton() {
+	window.location.href = "stock_management.html";
+}
+
+function goBackButton() {
+	window.location.href ="mainview.html";
 }

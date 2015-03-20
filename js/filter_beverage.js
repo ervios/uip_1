@@ -1,21 +1,12 @@
 /*
-	This is the javascript area, you can add javascript directly into html but it's a good practice to keep it
-	seperated just as we want to keep CSS seperated from HTML. This file is loaded into the page in the <head></head>
-	section <script src="js/javascript_file.js"></script>, just like we did with the css file. Its states we have a 
-	javascript file inside the folder "js" with the name javascript_file.js, and of course this can be named whatever.
-*/
-
-/* 
-	This is a silly function that just opens up an alert or a small popup window. Alerts are great to use when
-	trying to see if a button works or if you want to see that something actually is working.
+	This js-file contains code for the filter or search of beers.
+	-->The API links should be changed for whichever user is logged in.
 */
 
 var beerIDs = [];
 var latestSearch = [];
 initLists(beerIDs);
 storeBeerInfo();
-
-
 
 function getSessionsItems() {
 	var list = [];
@@ -28,6 +19,7 @@ function getSessionsItems() {
 }
 
 function storeBeerInfo() {
+	
 	var baseString = "http://pub.jamaica-inn.net/fpdb/api.php?username=jorass&password=jorass&action=beer_data_get&beer_id=";
  	var returnObj = [];	
 
@@ -43,7 +35,6 @@ function storeBeerInfo() {
 function httpGet(theUrl)
 {
     var xmlHttp = null;
-
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false );
     xmlHttp.send( null );
@@ -200,7 +191,3 @@ function smartSearch() {
 
 var sessionList = getSessionsItems();
 display(sessionList, "demo");
-//getBeerVol();
-// display(data, "demo2");
-//getBeerVol();
-//sessStor();

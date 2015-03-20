@@ -4,61 +4,58 @@
     <title>The Flying Dutchman</title>
     <link rel="shortcut icon" href="images/icon.png">
     <link rel="stylesheet" type="text/css" href="css/mainview.css" />
-    <script src="js/jQuery/jquery-1.11.2.min.js"></script>
-    <script src="js/database_functions.js"></script>
-    <script src="js/i18next/i18next-1.7.7.min.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/internationalization.js"></script>
-    <script src="js/transitions.js"></script>
-    <script src="js/logout_timer.js"></script>
-    <script src="js/user_management.js"></script>
+    <script src="js/jQuery/jquery-1.11.2.min.js"></script> <!-- jquery's library -->
+    <script src="js/database_functions.js"></script> <!-- Stores current logged in user and creates DB API links -->
+    <script src="js/i18next/i18next-1.7.7.min.js"></script> <!-- i18next-library -->
+    <script src="js/header.js"></script><!-- For the header's functions -->
+    <script src="js/internationalization.js"></script><!-- Change language functions -->
+    <script src="js/loadpages.js"></script> <!-- Changing page -->
+    <script src="js/transitions.js"></script> <!-- Animations -->
+    <script src="js/logout_timer.js"></script> <!-- Logout timer + logout script -->
+    <script src="js/user_management.js"></script> <!-- User management functions -->
 </head>
 
-<body onload="welcomeMessage(); getUserCredit(); setLogoutTimer();">
+<!-- onload function in:  loadpages.js -->
+<body onload="loadUserManagement();">
 	<div class="background-image"></div>
 
 	<div class="top-to-bottom" id="container">
 
+		<!-- header.js -->
 		<div id="header">
-			<div id="logo" onclick="window.location.href = 'mainview.html';">The Flying<br>Dutchman</div>
-            <div id="welcome-message" class="message" data-i18n="message.welcome"></div><div id="fname">,</div>
-           	<input type="image" id="logout-button" src="images/logout_button.svg" onclick="logout();">
-			<input type="image" id="language-button" src="images/lang_flags.png">
-			<input type="image" class="imgbutton-style" id="change-theme" src="images/bg2.jpg">
-			<input type="image" id="profile-button" src="images/profile1.png" onclick="userManagement();">
+			<div id="logo" onclick="portMainView();">The Flying<br>Dutchman</div>
+            <div id="welcome-message" class="message" data-i18n="message.welcome"></div>
+            <div id="fname">,</div>
+            <!-- logout() -> logout.js, change theme btn -> transitions.js, change language -> internationalization.js -->
+           	<input type="image" id="logout-button" 	onclick="logout();"				src="images/logout_button.svg" >
+			<input type="image" id="language-button"class=""						src="images/lang_flags.png">
+			<input type="image" id="change-theme" 	class="imgbutton-style" 		src="images/bg2.jpg">
+			<input type="image" id="profile-button" onclick="portUserManagement();" src="images/profile1.png" >
 			<div id="credit"><img src="images/credit1.png"></div>
 		</div>
-
+		
 		<div class="border_view" id="middle_section">
-			<div class="border_view" id="left_side_content">
-				
-			</div>
+			<!-- LEFT SIDE/SEARCH-FILTER IN MID SECTION -  EMPTY HERE -->
+			<div class="border_view" id="left_side_content"></div>
 
 			<div class="border_view" id="middle_content">
 
 				<div id="midcontainer" class="bottom-to-top">
 					<div id="settings-user-management" class="settings" data-i18n="settings.user_management"></div>
 					<div class="user-man-icons">
-					<input type="image" class="imgbutton-style" src="images/remove-user.png" onclick="alert('Not implemented');">
-					<input  type="image" class="imgbutton-style" src="images/edit-user.png" onclick="editUserButton();">
-					<input type="image"  class="imgbutton-style"src="images/add-user.png" onclick="addUserButton();">
-
+						<input type="image" class="imgbutton-style" src="images/remove-user.png" onclick="alert('Not implemented');">
+						<input  type="image" class="imgbutton-style" src="images/edit-user.png" onclick="portEditUser();">
+						<input type="image"  class="imgbutton-style"src="images/add-user.png" onclick="portAddUser();">
 					</div>
 					<div class="go-back-user">
 						<input type="image" class="imgbutton-style" src="images/go-back.png" onclick="goBackButton();" >
-					</div>
-					
-				
-					
-			</div>
-			<div class="border_view" id="right_side_content">
-				
+					</div>	
+				</div>
+			<!-- RIGHT SIDE/ORDER LIST IN MID SECTION -  EMPTY HERE -->
+			<div class="border_view" id="right_side_content"></div>
+
 			</div>
 		</div>
-
-
-		<!--<div id="footer">footer</div>-->
-
-	</div>
+<!--<div id="footer">footer</div>-->
 </body>
 </html>

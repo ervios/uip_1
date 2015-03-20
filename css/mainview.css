@@ -289,6 +289,10 @@ overflow: scroll;
       linear-gradient(to top, white, rgba(0, 0, 0, 0)) 1 100%;
 }
 
+/*
+  Beerview-->
+*/
+
 #beerblock {
 	font-size: 20px;
 	font: bold;
@@ -331,6 +335,11 @@ overflow: scroll;
 	bottom: 8px;
 	left: 20px;
 }
+
+/*
+   <--Beerview
+*/
+
 .button_options label {
   width: 80%;
   display:inline-block;

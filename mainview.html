@@ -17,13 +17,13 @@
     <script src="js/transitions.js"></script>
     <script src="js/loadpages.js"></script>
 </head>
-
+<!-- onload function found in loadpages.js-->
 <body onload="loadMainView(); ">
 	<div class="background-image"></div>
 
 	<div class="top-to-bottom" id="container"> <!--Whole page content-->
 
-		<!-- HEADER PART -->
+		<!-- HEADER PART, functions found in header.js -->
 		<div id="header">
 			<div id="logo">The Flying<br>Dutchman</div>
             <div id="welcome-message" class="message" data-i18n="message.welcome"></div><div id="fname">,</div>
@@ -31,15 +31,17 @@
 			<input type="image" class="imgbutton-style" id="logout-button" src="images/logout_button.svg" onclick="logout();">
 			<input type="image" class="imgbutton-style" id="language-button" src="images/lang_flags.png">
 			<input type="image" class="imgbutton-style" id="change-theme" src="images/bg2.jpg">
-			<input type="image" class="imgbutton-style" id="profile-button" src="images/profile1.png" onclick="userManagement();">
+			<input type="image" class="imgbutton-style" id="profile-button" src="images/profile1.png" onclick="portUserManagement();">
 			
 			<div id="credit"><img src="images/credit1.png"></div>
-		</div>
+		</div><!-- ENDS HEADER -->
 
 		<!-- WHOLE AREA UNDER HEADER; LEFT SIDE + MIDDLE + RIGHT SIDE -->
 		<div class="border_view" id="middle_section">
 
-			<!-- LEFT SIDE -->
+			<!-- LEFT SIDE
+				Functions may be found in: js/filter_beverage.js
+			 -->
 			<div class="border_view" id="left_side_content">
 
 				<!-- SEARCH FIELD -->
@@ -90,6 +92,8 @@
 		</div> <!-- END LEF SIDE CONTENT -->
 
 
+		<!-- MIDDLE PART, FAVOURITES AND BEERVIEW 
+			Functions used here are found in generate_bevarage.js-->
 		<div class="border_view" id="middle_content">
 
 			<div id="midcontainer" class="bottom-to-top"> 
@@ -126,9 +130,7 @@
 		</div> <!-- END RIGHT SIDE CONTENT -->
 	</div><!-- END CONTAINER -->
 
+	<!--<div id="footer">Incase we ever want to use a footer below the middle section</div>-->
 
-		<!--<div id="footer">footerqweqewq</div>-->
-
-	<!-- </div> -->
 </body>
 </html>

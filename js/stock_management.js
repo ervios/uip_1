@@ -1,6 +1,5 @@
-function stockManagementButton() {
-	window.location.href = "stock_management.html";
-}
+/* If you go to stock_management.html this is used there, there's no button for it at the moment.*/
+
 var lowStockList = [];
 
 function createBody() {
